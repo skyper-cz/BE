@@ -1,6 +1,6 @@
 Toto je pololetní projekt s FE Angularem a BE JavaEE.
 
-Stage 1
+**Stage 1**
 
 FE:
 
@@ -8,13 +8,13 @@ Psychická podpora - Fabian
 Homepage - Mikoláš - co bude na Homepage?
 Portfolio uživatele - editovatelné - Janko
 Vyhledávání - Láďa
-Stage 2
+**Stage 2**
 
 Psychická podpora - Fabian
 Dočasné ukládání portfolia - Janko
 načítání portfolia
 přidávání uživatelů
-Stage 3
+**Stage 3**
 
 Psychická podpora - Fabian
 Komunikace BE a FE - Láďa
@@ -26,7 +26,7 @@ PUT - upráví údaje v položce
 POST - vytvoří účet
 DELETE - smaže uživatele
 Homepage layout, remake registrační komponenty, user page - Mikoláš
-Stage 4
+**Stage 4**
 
 Psychická podpora - Fabian
 Komunikace BE a FE - Láďa
@@ -39,7 +39,7 @@ POST - vytvoří účet
 DELETE - smaže uživatele
 Oprava gitignorů - Mikoláš
 FE styles - Janko
-Stage 5
+**Stage 5**
 
 Psychická podpora - Fabian
 Login | Register - Láďa a Mikoláš
@@ -51,7 +51,7 @@ Profil přihlášeného uživatele
 možnost upravit jeho informace
 testy
 Jestli vše zatím funguje jak má
-Stage 6
+**Stage 6**
 
 Move projektu na jednotlivé repa
 
