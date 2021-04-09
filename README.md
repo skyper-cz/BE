@@ -58,4 +58,3 @@ FE styles - Janko
 * Login a register - Mikoláš + Láďa help
 * Backend pochutina a ghetování dat z BE (profily) - Janko
 * Fabián bude psychicky podporovat (asi)
-* bbbbbb
