@@ -4,6 +4,7 @@ import educanet.Resources.User;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 @ApplicationScoped
@@ -11,24 +12,24 @@ import java.util.ArrayList;
 
 public class UserManager {
 
-    ArrayList<User> Group = new ArrayList<User>();
+    HashMap<Integer, User> Group = new HashMap<>();
     int id = 0;
 
     public void putUser(User User) {
-        User.setId(id++);
-        Group.add(User);
+        User.setId(id);
+        Group.put(id, User);
+        id++;
     }
 
-    public ArrayList<User> getUsers() {
+    public HashMap<Integer, User> getUsers() {
         return Group;
     }
 
     public User getSpecificUser(int id) {
-
         return(Group.get(id));
     }
 
-    public void delete(int removeid) {
-        Group.remove(removeid - 1);
+    public void delete(int removeId) {
+        Group.remove(removeId);
     }
 }
