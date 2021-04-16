@@ -12,9 +12,10 @@ import java.util.ArrayList;
 public class UserManager {
 
     ArrayList<User> Group = new ArrayList<User>();
+    int id = 0;
 
-    public void putuser(User User) {
-        User.setId(Group.size() + 1);
+    public void putUser(User User) {
+        User.setId(id++);
         Group.add(User);
     }
 
@@ -22,7 +23,7 @@ public class UserManager {
         return Group;
     }
 
-    public User getspecificuser(int id) {
+    public User getSpecificUser(int id) {
 
         return(Group.get(id));
     }

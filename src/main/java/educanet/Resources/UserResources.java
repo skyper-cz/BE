@@ -24,20 +24,20 @@ public class UserResources {
     @GET
     @Path("get-specific")
     public Response getSpecific(@QueryParam("id") int id) {
-        return Response.ok(Users.getspecificuser(id)).build();
+        return Response.ok(Users.getSpecificUser(id)).build();
     }
 
     @POST
     @Path("create")
     public Response create(User User) {
-        Users.putuser(User);
+        Users.putUser(User);
         return Response.ok(User).build();
     }
 
     @DELETE
     @Path("delete")
-    public Response delete(@QueryParam("id") int removeid) {
-        Users.delete(removeid);
+    public Response delete(@QueryParam("id") int removeId) {
+        Users.delete(removeId);
         return Response.ok().build();
     }
 }

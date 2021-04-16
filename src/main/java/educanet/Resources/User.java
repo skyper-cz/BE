@@ -4,9 +4,9 @@ public class User {
 
     private int id;
     private String username;
-    private String heslo;
+    private String password;
     private String name;
-    private String popis;
+    private String description;
     private String skills;
 
     public int getId() {
@@ -25,12 +25,12 @@ public class User {
         this.username = username;
     }
 
-    public String getHeslo() {
-        return heslo;
+    public String getPassword() {
+        return password;
     }
 
-    public void setHeslo(String heslo) {
-        this.heslo = heslo;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -41,12 +41,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPopis() {
-        return popis;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPopis(String popis) {
-        this.popis = popis;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getSkills() {
