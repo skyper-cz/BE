@@ -16,14 +16,14 @@ public class UserResources {
     private UserManager Users;
 
     @GET
-    @Path("get-all")
+    @Path("")
     public Response getAll() {
         return Response.ok(Users.getUsers()).build();
     }
 
     @GET
-    @Path("get-specific")
-    public Response getSpecific(@QueryParam("id") int id) {
+    @Path("user")
+    public Response getSpecific(int id) {
         return Response.ok(Users.getSpecificUser(id)).build();
     }
 
@@ -34,10 +34,17 @@ public class UserResources {
         return Response.ok(User).build();
     }
 
+    @PUT
+    @Path("create")
+    public Response edit(User User) {
+        Users.editUser(User.getId(),User);
+        return Response.ok(User).build();
+    }
+
     @DELETE
     @Path("delete")
-    public Response delete(@QueryParam("id") int removeId) {
-        Users.delete(removeId);
+    public Response delete(int id) {
+        Users.delete(id);
         return Response.ok().build();
     }
 }
