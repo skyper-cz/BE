@@ -21,6 +21,10 @@ public class UserManager {
         id++;
     }
 
+    public void editUser(int id, User user){
+        Group.put(id, user);
+    }
+
     public HashMap<Integer, User> getUsers() {
         return Group;
     }
