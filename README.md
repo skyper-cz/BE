@@ -57,3 +57,12 @@ FE styles - Janko
 * [ ] Move projektu na jednotlivé repa
 * [ ] Backend pochutina a ghetování dat z BE (profily) - Janko
 * [ ] Fabián bude psychicky podporovat (asi)
+
+**Stage 7**
+* [ ] Opravit chyby v FE
+* [ ] komunikace BE a FE
+
+
+
+    
+
