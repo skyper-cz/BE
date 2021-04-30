@@ -59,7 +59,6 @@ FE styles - Janko
 * [ ] Fabián bude psychicky podporovat (asi)
 
 **Stage 7**
-* [ ] Opravit chyby v FE
 * [ ] komunikace BE a FE
 
 
