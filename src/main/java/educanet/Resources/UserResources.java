@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Locale;
 
 @Path("users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -13,38 +14,48 @@ import javax.ws.rs.core.Response;
 public class UserResources {
 
     @Inject
-    private UserManager Users;
+    private UserManager userManager;
 
     @GET
     @Path("")
-    public Response getAll() {
-        return Response.ok(Users.getUsers()).build();
+    public Response getAllUsers() {
+        return Response.ok(userManager.getUsers()).build();
     }
 
     @GET
     @Path("user")
-    public Response getSpecific(int id) {
-        return Response.ok(Users.getSpecificUser(id)).build();
+    public Response getOneUser(int id) {
+        return Response.ok(userManager.getSpecificUser(id)).build();
     }
 
     @POST
     @Path("create")
-    public Response create(User User) {
-        Users.putUser(User);
-        return Response.ok(User).build();
+    public Response create(User user) {
+        if (user.getUsername().toLowerCase(Locale.ROOT).equals("teapot")) return Response.status(418, "I am the only teapot here!").build(); // Easter egg
+        for (int i = 0; i < userManager.getMapSize(); i++) {
+            if (userManager.getSpecificUser(i).getUsername().equals(user.getUsername()))
+                return Response.status(409, "This username already exists.").build();
+        }
+        userManager.putUser(user);
+        return Response.ok(user).build();
     }
 
     @PUT
     @Path("create")
-    public Response edit(User User) {
-        Users.editUser(User.getId(),User);
-        return Response.ok(User).build();
+    public Response edit(User user) {
+        if (user.getUsername().toLowerCase(Locale.ROOT).equals("teapot")) return Response.status(418, "I am the only teapot here!").build(); // Easter egg
+        for (int i = 0; i < userManager.getMapSize(); i++) {
+            if (userManager.getSpecificUser(i).getUsername().equals(user.getUsername()))
+                return Response.status(409, "This username already exists.").build();
+        }
+        userManager.editUser(user.getId(), user);
+        return Response.ok(user).build();
     }
 
     @DELETE
     @Path("delete")
     public Response delete(int id) {
-        Users.delete(id);
+        userManager.delete(id);
         return Response.ok().build();
     }
 }

@@ -3,7 +3,6 @@ package educanet.Manager;
 import educanet.Resources.User;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -12,28 +11,32 @@ import java.util.HashMap;
 
 public class UserManager {
 
-    HashMap<Integer, User> Group = new HashMap<>();
+    HashMap<Integer, User> userHashMap = new HashMap<>();
     int id = 0;
+
+    public int getMapSize() {
+        return userHashMap.size();
+    }
 
     public void putUser(User User) {
         User.setId(id);
-        Group.put(id, User);
+        userHashMap.put(id, User);
         id++;
     }
 
-    public void editUser(int id, User user){
-        Group.put(id, user);
+    public void editUser(int id, User user) {
+        userHashMap.put(id, user);
     }
 
     public HashMap<Integer, User> getUsers() {
-        return Group;
+        return userHashMap;
     }
 
     public User getSpecificUser(int id) {
-        return(Group.get(id));
+        return (userHashMap.get(id));
     }
 
     public void delete(int removeId) {
-        Group.remove(removeId);
+        userHashMap.remove(removeId);
     }
 }

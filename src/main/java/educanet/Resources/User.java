@@ -9,6 +9,14 @@ public class User {
     private String description;
     private String skills;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public int getId() {
         return id;
     }
